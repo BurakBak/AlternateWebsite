@@ -274,23 +274,28 @@
         .book-container {
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 30px; /* Reduced for better spacing */
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+            justify-content: center;
         }
         
         .book-cover {
-            flex: 1;
+            flex: 0 0 auto; /* Prevents the image from stretching too much */
             text-align: center;
         }
         
         .book-cover img {
-            max-width: 100%;
+            width: 100%; /* Keeps it responsive */
+            max-width: 250px; /* Limits max size */
             height: auto;
             border-radius: 10px;
             box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+            object-fit: cover;
         }
         
         .book-info {
-            flex: 1;
+            flex: 1; /* Allows text to fill remaining space */
+            min-width: 300px;
         }
         
         .book-info h2 {
@@ -301,6 +306,23 @@
         .book-info p {
             margin-bottom: 20px;
             color: var(--text-secondary);
+        }
+        
+        /* Responsive Fix */
+        @media (max-width: 768px) {
+            .book-container {
+                flex-direction: column; /* Stack vertically on smaller screens */
+                text-align: center;
+                gap: 20px;
+            }
+        
+            .book-cover img {
+                max-width: 70%; /* Reduce size on smaller screens */
+            }
+        
+            .book-info {
+                min-width: unset;
+            }
         }
         
         /* Contact Section */
@@ -610,7 +632,7 @@
         <div class="container">
             <div class="book-container">
                 <div class="book-cover">
-                    <img src="assets/Book Cover.JPG" alt="Blueprint for Transforming HR Through AI and Evidence" style="width: 40%; max-height: 300px;" />
+                    <img src="assets/Book Cover.JPG" alt="Blueprint for Transforming HR Through AI and Evidence" />
                 </div>
                 <div class="book-info">
                     <h2>Blueprint for Transforming HR Through AI and Evidence</h2>
