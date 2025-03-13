@@ -132,14 +132,25 @@
         .hero {
             height: 100vh;
             display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
         }
-        
+
+        .content-wrapper {
+            display: flex;
+            align-items: center; /* Align text and image vertically */
+            gap: 20px; /* Add space between the image and text */
+        }
+
+        .side-image {
+            max-width: 30%; 
+            height: auto;
+            border-radius: 8px; /* Optional for rounded corners */
+            object-fit: cover;
+        }
+
         .hero-content {
-            max-width: 800px;
-            z-index: 1;
+            flex: 1; /* Allow the text to take up remaining space */
         }
         
         .hero h1 {
