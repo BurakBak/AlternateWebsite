@@ -280,17 +280,17 @@
         }
         
         .book-cover {
-            flex: 1 auto; /* Prevents the image from stretching too much */
+            flex: 1 1 auto; /* Prevents the image from stretching too much */
             text-align: center;
         }
         
         .book-cover img {
-            width: 80%; /* Keeps it responsive */
+            width: 100%; /* Keeps it responsive */
             max-width: 400px;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
-            object-fit: cover;
+            object-fit: contain;
         }
         
         .book-info {
